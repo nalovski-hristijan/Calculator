@@ -19,8 +19,8 @@
     <string name="parenthesesCloseText">)</string>
     <string name="divideText">÷</string>
     <string name="multiplyText">×</string>
-    <string name="addText">+</string>
-    <string name="subtractText">-</string>
+    <string name="plusText">+</string>
+    <string name="minusText">-</string>
     <string name="decimalText">.</string>
     <string name="equalsText">=</string>
 
