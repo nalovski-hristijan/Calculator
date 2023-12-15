@@ -22,73 +22,39 @@ public class MainActivity extends AppCompatActivity {
 
         binding.displayEditText.setShowSoftInputOnFocus(false);
 
-        binding.zeroButton.setOnClickListener(view -> {
-            updateText(getResources().getString(R.string.zeroText));
-        });
+        binding.zeroButton.setOnClickListener(view -> updateText(getResources().getString(R.string.zeroText)));
 
-        binding.oneButton.setOnClickListener(view -> {
-            updateText(getResources().getString(R.string.oneText));
-        });
+        binding.oneButton.setOnClickListener(view -> updateText(getResources().getString(R.string.oneText)));
 
-        binding.twoButton.setOnClickListener(view -> {
-            updateText(getResources().getString(R.string.twoText));
-        });
+        binding.twoButton.setOnClickListener(view -> updateText(getResources().getString(R.string.twoText)));
 
-        binding.threeButton.setOnClickListener(view -> {
-            updateText(getResources().getString(R.string.threeText));
-        });
+        binding.threeButton.setOnClickListener(view -> updateText(getResources().getString(R.string.threeText)));
 
-        binding.fourButton.setOnClickListener(view -> {
-            updateText(getResources().getString(R.string.fourText));
-        });
+        binding.fourButton.setOnClickListener(view -> updateText(getResources().getString(R.string.fourText)));
 
-        binding.fiveButton.setOnClickListener(view -> {
-            updateText(getResources().getString(R.string.fiveText));
-        });
+        binding.fiveButton.setOnClickListener(view -> updateText(getResources().getString(R.string.fiveText)));
 
-        binding.sixButton.setOnClickListener(view -> {
-            updateText(getResources().getString(R.string.sixText));
-        });
+        binding.sixButton.setOnClickListener(view -> updateText(getResources().getString(R.string.sixText)));
 
-        binding.sevenButton.setOnClickListener(view -> {
-            updateText(getResources().getString(R.string.sevenText));
-        });
+        binding.sevenButton.setOnClickListener(view -> updateText(getResources().getString(R.string.sevenText)));
 
-        binding.eightButton.setOnClickListener(view -> {
-            updateText(getResources().getString(R.string.eightText));
-        });
+        binding.eightButton.setOnClickListener(view -> updateText(getResources().getString(R.string.eightText)));
 
-        binding.nineButton.setOnClickListener(view -> {
-            updateText(getResources().getString(R.string.nineText));
-        });
+        binding.nineButton.setOnClickListener(view -> updateText(getResources().getString(R.string.nineText)));
 
-        binding.openParButton.setOnClickListener(view -> {
-            updateText(getResources().getString(R.string.parenthesesOpenText));
-        });
+        binding.openParButton.setOnClickListener(view -> updateText(getResources().getString(R.string.parenthesesOpenText)));
 
-        binding.closeParButton.setOnClickListener(view -> {
-            updateText(getResources().getString(R.string.parenthesesCloseText));
-        });
+        binding.closeParButton.setOnClickListener(view -> updateText(getResources().getString(R.string.parenthesesCloseText)));
 
-        binding.divideButton.setOnClickListener(view -> {
-            updateText(getResources().getString(R.string.divideText));
-        });
+        binding.divideButton.setOnClickListener(view -> updateText(getResources().getString(R.string.divideText)));
 
-        binding.multiplyButton.setOnClickListener(view -> {
-            updateText(getResources().getString(R.string.multiplyText));
-        });
+        binding.multiplyButton.setOnClickListener(view -> updateText(getResources().getString(R.string.multiplyText)));
 
-        binding.minusButton.setOnClickListener(view -> {
-            updateText(getResources().getString(R.string.minusText));
-        });
+        binding.minusButton.setOnClickListener(view -> updateText(getResources().getString(R.string.minusText)));
 
-        binding.plusButton.setOnClickListener(view -> {
-            updateText(getResources().getString(R.string.plusText));
-        });
+        binding.plusButton.setOnClickListener(view -> updateText(getResources().getString(R.string.plusText)));
 
-        binding.decimalButton.setOnClickListener(view -> {
-            updateText(getResources().getString(R.string.decimalText));
-        });
+        binding.decimalButton.setOnClickListener(view -> updateText(getResources().getString(R.string.decimalText)));
 
         binding.equalsButton.setOnClickListener(view -> {
             String userExpr = binding.displayEditText.getText().toString();
@@ -104,9 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        binding.clearButton.setOnClickListener(view -> {
-            binding.displayEditText.setText("");
-        });
+        binding.clearButton.setOnClickListener(view -> binding.displayEditText.setText(""));
 
         binding.backspaceButton.setOnClickListener(view -> {
             int cursorPosition = binding.displayEditText.getSelectionStart();
@@ -121,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
     }
 
     private void updateText(String addStr) {
@@ -133,5 +98,66 @@ public class MainActivity extends AppCompatActivity {
 
         binding.displayEditText.setText(String.format("%s%s%s", leftStr, addStr, rightStr));
         binding.displayEditText.setSelection(cursorPosition + addStr.length());
+    }
+
+
+    public void sinButton(View view){
+        updateText("sin(");
+    }
+
+    public void cosButton(View view){
+        updateText("cos(");
+    }
+
+    public void tanButton(View view){
+        updateText("tan(");
+    }
+
+    public void arcSinButton(View view){
+        updateText("arcsin(");
+    }
+
+    public void arcCosButton(View view){
+        updateText("arccos(");
+    }
+
+    public void arcTanButton(View view){
+        updateText("arctan(");
+    }
+
+    public void naturalLogButton(View view){
+        updateText("ln(");
+    }
+
+    public void logButton(View view){
+        updateText("log(");
+    }
+
+    public void sqrtButton(View view){
+        updateText("sqrt(");
+    }
+
+    public void absButton(View view){
+        updateText("abs(");
+    }
+
+    public void piButton(View view){
+        updateText("pi");
+    }
+
+    public void eButton(View view){
+        updateText("e");
+    }
+
+    public void xSquaredButton(View view){
+        updateText("^(2)");
+    }
+
+    public void xPowerYButton(View view){
+        updateText("^(");
+    }
+
+    public void primeButton(View view){
+        updateText("ispr(");
     }
 }
