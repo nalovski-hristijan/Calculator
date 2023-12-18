@@ -59,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
         binding.equalsButton.setOnClickListener(view -> {
             String userExpr = binding.displayEditText.getText().toString();
 
+            binding.previousCalculation.setText(userExpr);
+
             userExpr = userExpr.replaceAll(getResources().getString(R.string.divideText), "/");
             userExpr = userExpr.replaceAll(getResources().getString(R.string.multiplyText), "*");
 
@@ -70,20 +72,22 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        binding.clearButton.setOnClickListener(view -> binding.displayEditText.setText(""));
+        binding.clearButton.setOnClickListener(view -> {
+                    binding.displayEditText.setText("");
+                    binding.previousCalculation.setText("");
+                });
 
-        binding.backspaceButton.setOnClickListener(view -> {
-            int cursorPosition = binding.displayEditText.getSelectionStart();
-            int textLen = binding.displayEditText.length();
+                binding.backspaceButton.setOnClickListener(view -> {
+                    int cursorPosition = binding.displayEditText.getSelectionStart();
+                    int textLen = binding.displayEditText.length();
 
-            if (cursorPosition != 0 && textLen != 0) {
-                SpannableStringBuilder selection = (SpannableStringBuilder) binding.displayEditText.getText();
-                selection.replace(cursorPosition - 1, cursorPosition, "");
-                binding.displayEditText.setText(selection);
-                binding.displayEditText.setSelection(cursorPosition - 1);
-            }
-        });
-
+                    if (cursorPosition != 0 && textLen != 0) {
+                        SpannableStringBuilder selection = (SpannableStringBuilder) binding.displayEditText.getText();
+                        selection.replace(cursorPosition - 1, cursorPosition, "");
+                        binding.displayEditText.setText(selection);
+                        binding.displayEditText.setSelection(cursorPosition - 1);
+                    }
+                });
 
 
     }
@@ -101,63 +105,63 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void sinButton(View view){
+    public void sinButton(View view) {
         updateText("sin(");
     }
 
-    public void cosButton(View view){
+    public void cosButton(View view) {
         updateText("cos(");
     }
 
-    public void tanButton(View view){
+    public void tanButton(View view) {
         updateText("tan(");
     }
 
-    public void arcSinButton(View view){
+    public void arcSinButton(View view) {
         updateText("arcsin(");
     }
 
-    public void arcCosButton(View view){
+    public void arcCosButton(View view) {
         updateText("arccos(");
     }
 
-    public void arcTanButton(View view){
+    public void arcTanButton(View view) {
         updateText("arctan(");
     }
 
-    public void naturalLogButton(View view){
+    public void naturalLogButton(View view) {
         updateText("ln(");
     }
 
-    public void logButton(View view){
+    public void logButton(View view) {
         updateText("log(");
     }
 
-    public void sqrtButton(View view){
+    public void sqrtButton(View view) {
         updateText("sqrt(");
     }
 
-    public void absButton(View view){
+    public void absButton(View view) {
         updateText("abs(");
     }
 
-    public void piButton(View view){
+    public void piButton(View view) {
         updateText("pi");
     }
 
-    public void eButton(View view){
+    public void eButton(View view) {
         updateText("e");
     }
 
-    public void xSquaredButton(View view){
+    public void xSquaredButton(View view) {
         updateText("^(2)");
     }
 
-    public void xPowerYButton(View view){
+    public void xPowerYButton(View view) {
         updateText("^(");
     }
 
-    public void primeButton(View view){
+    public void primeButton(View view) {
         updateText("ispr(");
     }
 }
